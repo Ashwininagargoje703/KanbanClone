@@ -8,7 +8,19 @@ const DragCard = ({ item, index }) => {
   return (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {(provided, snapshot) => (
-        <div className="rounded-2xl bg-#e3e1ec">
+        <div
+          style={{
+            borderRadius: snapshot.isDragging ? "10px" : "",
+            border: snapshot.isDragging
+              ? "1px dashed rgba(80, 48, 229, 0.59)"
+              : "",
+            background: snapshot.isDragging ? "rgba(80, 48, 229, 0.06)" : "",
+            minHeight: snapshot.isDragging ? "180px" : "",
+            maxHeight: snapshot.isDragging ? "320px" : "",
+            marginTop: "10px",
+            paddingTop: "10px",
+          }}
+        >
           <div
             ref={provided.innerRef}
             {...provided.draggableProps}
@@ -16,7 +28,7 @@ const DragCard = ({ item, index }) => {
           >
             <div
               className="flex flex-col bg-white rounded-md p-2 pl-4 pr-4 my-4 max-w-xs"
-              style={{ borderRadius: "16px", maxHeight: "328pxs" }}
+              style={{ borderRadius: "16px" }}
             >
               <div className="flex justify-between my-2 w-full">
                 <div>
