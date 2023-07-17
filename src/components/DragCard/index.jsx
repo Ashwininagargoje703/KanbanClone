@@ -16,9 +16,6 @@ const DragCard = ({ item, index }) => {
               : "",
             background: snapshot.isDragging ? "rgba(80, 48, 229, 0.06)" : "",
             minHeight: snapshot.isDragging ? "180px" : "",
-            maxHeight: snapshot.isDragging ? "320px" : "",
-            marginTop: "10px",
-            paddingTop: "10px",
           }}
         >
           <div
@@ -27,8 +24,11 @@ const DragCard = ({ item, index }) => {
             {...provided.dragHandleProps}
           >
             <div
-              className="flex flex-col bg-white rounded-md p-2 pl-4 pr-4 my-4 max-w-xs"
-              style={{ borderRadius: "16px" }}
+              className="flex flex-col bg-white rounded-md p-2 pl-4 pr-4 my-2 max-w-xs"
+              style={{
+                borderRadius: "16px",
+                marginTop: snapshot.isDragging ? "-60px" : "",
+              }}
             >
               <div className="flex justify-between my-2 w-full">
                 <div>
