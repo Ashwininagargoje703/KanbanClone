@@ -9,11 +9,10 @@ const TaskList = styled.div`
   display: flex;
   flex-direction: column;
   background: #f3f3f3;
-  min-width: 329px;
   border-radius: 16px;
   padding: 15px 15px;
-  margin-right: 10px;
-  margin-left: 15px;
+  margin-right: 5px;
+  margin-left: 10px;
 `;
 
 const DropCard = () => {
